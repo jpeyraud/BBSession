@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14031"/>
+    </dependencies>
+    <scenes>
+        <!--Sessions-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller title="Sessions" id="AgC-eL-Hgc" customClass="SessionSelectionInterfaceController" customModule="BB_Session_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="ucs-Va-NNF">
+                            <items>
+                                <tableRow identifier="LabelTableRowController" id="YcC-nC-Xtf" customClass="LabelTableRowController" customModule="BB_Session_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="mgT-LA-0sw">
+                                        <items>
+                                            <label width="136" height="64" alignment="center" text="Label" textAlignment="center" id="UFQ-fA-ftz"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="rowLabel" destination="UFQ-fA-ftz" id="caL-6a-g7a"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <button width="40" alignment="center" title="+" id="n7W-R3-7Fr" userLabel="Add">
+                            <connections>
+                                <segue destination="9aU-K2-ApI" kind="modal" id="lDM-2J-gGN"/>
+                            </connections>
+                        </button>
+                        <table alignment="left" id="0Ki-wb-GYr"/>
+                    </items>
+                    <connections>
+                        <outlet property="sessionTable" destination="ucs-Va-NNF" id="HoA-nm-AE4"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="147.33333333333334" y="339.5641025641026"/>
+        </scene>
+        <!--Exercises-->
+        <scene sceneID="A23-PT-Hh2">
+            <objects>
+                <controller title="Exercises" id="9aU-K2-ApI" customClass="CreateSessionInterfaceController" customModule="BB_Session_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="u4s-UD-fpE">
+                            <items>
+                                <tableRow identifier="LabelTableRowController" id="oVf-ld-0fx" customClass="LabelTableRowController" customModule="BB_Session_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="fIe-z0-NQg">
+                                        <items>
+                                            <label width="136" height="64" alignment="center" text="Label" textAlignment="center" id="DOz-Je-wyq"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="rowLabel" destination="DOz-Je-wyq" id="Tym-xL-5nE"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <button width="40" alignment="center" title="+" id="vhW-SQ-tWZ" userLabel="Add">
+                            <connections>
+                                <segue destination="ruR-zV-yDF" kind="modal" identifier="createExerciseSegue" id="F5f-4K-Rnk"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Done" id="kQa-4A-QS0">
+                            <connections>
+                                <action selector="addSessionToManager" destination="9aU-K2-ApI" id="6RU-Jy-KJF"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="exerciseList" destination="u4s-UD-fpE" id="lxv-Z3-ovB"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="479.4871794871795" y="339.5641025641026"/>
+        </scene>
+        <!--Create Exercise Interface Controller-->
+        <scene sceneID="Gsj-uC-Jng">
+            <objects>
+                <controller id="ruR-zV-yDF" customClass="CreateExerciseInterfaceController" customModule="BB_Session_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="ytC-uE-bV2">
+                            <items>
+                                <label alignment="left" text="Series" id="3cm-SP-Vb0"/>
+                                <picker width="60" height="55" alignment="right" focusStyle="stack" id="bd2-Ny-DFl">
+                                    <connections>
+                                        <action selector="seriesPickerUpdated:" destination="ruR-zV-yDF" id="I44-zQ-n0I"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="Jqh-p2-K2q">
+                            <items>
+                                <label alignment="left" text="Repetitions" id="Mea-c8-Kr4"/>
+                                <picker width="60" height="55" alignment="right" focusStyle="stack" id="7CI-W9-K2d">
+                                    <connections>
+                                        <action selector="repetitionsPickerUpdated:" destination="ruR-zV-yDF" id="zeL-Ur-x4k"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Done" id="ojx-NA-UWK">
+                            <connections>
+                                <action selector="addExerciseToSession" destination="ruR-zV-yDF" id="L7a-XT-zYL"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="repetitionsPicker" destination="7CI-W9-K2d" id="vG9-ua-1Sl"/>
+                        <outlet property="seriesPicker" destination="bd2-Ny-DFl" id="Wfh-oW-KnJ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="783" y="340"/>
+        </scene>
+    </scenes>
+</document>
