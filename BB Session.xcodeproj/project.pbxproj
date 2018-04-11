@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F81A4A3E207DDD8F00761016 /* ExerciseDescriptionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81A4A3D207DDD8F00761016 /* ExerciseDescriptionInterfaceController.swift */; };
+		F81A4A40207DE43B00761016 /* SessionDescriptionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81A4A3F207DE43B00761016 /* SessionDescriptionInterfaceController.swift */; };
 		F8CB6372207BCB040050037B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB6371207BCB040050037B /* AppDelegate.swift */; };
 		F8CB6374207BCB040050037B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB6373207BCB040050037B /* ViewController.swift */; };
 		F8CB6377207BCB040050037B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8CB6375207BCB040050037B /* Main.storyboard */; };
@@ -71,6 +73,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F81A4A3D207DDD8F00761016 /* ExerciseDescriptionInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDescriptionInterfaceController.swift; sourceTree = "<group>"; };
+		F81A4A3F207DE43B00761016 /* SessionDescriptionInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDescriptionInterfaceController.swift; sourceTree = "<group>"; };
 		F8CB636E207BCB040050037B /* BB Session.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BB Session.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8CB6371207BCB040050037B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8CB6373207BCB040050037B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 				F8CB6394207BCB060050037B /* SessionSelectionInterfaceController.swift */,
 				F8CB63B5207C8C670050037B /* CreateSessionInterfaceController.swift */,
 				F8CB63B7207C8E810050037B /* CreateExerciseInterfaceController.swift */,
+				F81A4A3F207DE43B00761016 /* SessionDescriptionInterfaceController.swift */,
+				F81A4A3D207DDD8F00761016 /* ExerciseDescriptionInterfaceController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -349,6 +355,8 @@
 				F8CB63B2207BD2F60050037B /* Session.swift in Sources */,
 				F8CB63B6207C8C670050037B /* CreateSessionInterfaceController.swift in Sources */,
 				F8CB6397207BCB060050037B /* ExtensionDelegate.swift in Sources */,
+				F81A4A3E207DDD8F00761016 /* ExerciseDescriptionInterfaceController.swift in Sources */,
+				F81A4A40207DE43B00761016 /* SessionDescriptionInterfaceController.swift in Sources */,
 				F8CB63B0207BD22F0050037B /* SessionManager.swift in Sources */,
 				F8CB6395207BCB060050037B /* SessionSelectionInterfaceController.swift in Sources */,
 			);

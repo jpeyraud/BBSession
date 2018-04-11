@@ -10,6 +10,8 @@ import WatchKit
 import Foundation
 
 class SessionSelectionInterfaceController: WKInterfaceController {
+    
+    static let storyboardId = "SessionSelectionInterfaceController"
 
     @IBOutlet var sessionTable: WKInterfaceTable!
     
@@ -31,5 +33,11 @@ class SessionSelectionInterfaceController: WKInterfaceController {
     
     override func didDeactivate() {
         super.didDeactivate()
+    }
+    
+    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+        let session = SessionManager.shared.getSession(atIndex: rowIndex)
+        
+        pushController(withName: SessionDescriptionInterfaceController.storyboardId, context: session)
     }
 }

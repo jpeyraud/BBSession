@@ -12,7 +12,7 @@
         <!--Sessions-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller title="Sessions" id="AgC-eL-Hgc" customClass="SessionSelectionInterfaceController" customModule="BB_Session_WatchKit_Extension">
+                <controller identifier="SessionSelectionInterfaceController" title="Sessions" id="AgC-eL-Hgc" customClass="SessionSelectionInterfaceController" customModule="BB_Session_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="ucs-Va-NNF">
                             <items>
@@ -40,12 +40,49 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="147.33333333333334" y="339.5641025641026"/>
+            <point key="canvasLocation" x="146" y="340"/>
+        </scene>
+        <!--ExerciseDescriptionInterfaceController-->
+        <scene sceneID="Uaa-0l-dgg">
+            <objects>
+                <controller identifier="ExerciseDescriptionInterfaceController" id="ulq-1B-7qX" customClass="ExerciseDescriptionInterfaceController" customModule="BB_Session_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="40" alignment="left" id="fVb-Dy-VMc">
+                            <items>
+                                <label height="1" alignment="left" text="Series:" id="m2j-uN-PLB"/>
+                                <label alignment="right" verticalAlignment="center" text="0" id="bbh-H3-2jq"/>
+                            </items>
+                        </group>
+                        <group width="1" height="40" alignment="left" id="T2J-dh-X0y">
+                            <items>
+                                <label height="1" alignment="left" text="Repetitions:" id="9bt-g0-qXh"/>
+                                <label alignment="right" verticalAlignment="center" text="0" id="mc4-3H-5La"/>
+                            </items>
+                        </group>
+                        <group width="1" height="55" alignment="left" id="bo7-ye-bCB">
+                            <items>
+                                <label height="1" alignment="left" text="Weight:" id="Sf2-AF-Ktq"/>
+                                <picker width="60" height="55" alignment="right" id="jly-iC-09Q">
+                                    <connections>
+                                        <action selector="weightPickerDidUpdate:" destination="ulq-1B-7qX" id="zNS-ZC-Pgd"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="repetitionsLabel" destination="mc4-3H-5La" id="Hif-Da-ntG"/>
+                        <outlet property="seriesLabel" destination="bbh-H3-2jq" id="7Ax-M3-h6h"/>
+                        <outlet property="weightPicker" destination="jly-iC-09Q" id="BZO-95-FeN"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="486" y="653"/>
         </scene>
         <!--Exercises-->
         <scene sceneID="A23-PT-Hh2">
             <objects>
-                <controller title="Exercises" id="9aU-K2-ApI" customClass="CreateSessionInterfaceController" customModule="BB_Session_WatchKit_Extension">
+                <controller identifier="CreateSessionInterfaceController" title="Exercises" id="9aU-K2-ApI" customClass="CreateSessionInterfaceController" customModule="BB_Session_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="u4s-UD-fpE">
                             <items>
@@ -73,16 +110,16 @@
                         </button>
                     </items>
                     <connections>
-                        <outlet property="exerciseList" destination="u4s-UD-fpE" id="lxv-Z3-ovB"/>
+                        <outlet property="exerciseTable" destination="u4s-UD-fpE" id="lxv-Z3-ovB"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="479.4871794871795" y="339.5641025641026"/>
         </scene>
-        <!--Create Exercise Interface Controller-->
+        <!--CreateExerciseInterfaceController-->
         <scene sceneID="Gsj-uC-Jng">
             <objects>
-                <controller id="ruR-zV-yDF" customClass="CreateExerciseInterfaceController" customModule="BB_Session_WatchKit_Extension">
+                <controller identifier="CreateExerciseInterfaceController" id="ruR-zV-yDF" customClass="CreateExerciseInterfaceController" customModule="BB_Session_WatchKit_Extension">
                     <items>
                         <group width="1" alignment="left" id="ytC-uE-bV2">
                             <items>
@@ -117,6 +154,33 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="783" y="340"/>
+        </scene>
+        <!--SessionDescriptionInterfaceController-->
+        <scene sceneID="ISa-AW-k5L">
+            <objects>
+                <controller identifier="SessionDescriptionInterfaceController" id="qv7-33-8f4" customClass="SessionDescriptionInterfaceController" customModule="BB_Session_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="oq6-OC-3Gy">
+                            <items>
+                                <tableRow identifier="LabelTableRowController" id="Tpk-9D-txF" customClass="LabelTableRowController" customModule="BB_Session_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="L8H-xb-pPI">
+                                        <items>
+                                            <label width="136" height="64" alignment="center" text="Label" textAlignment="center" id="1Ti-oE-9QP"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="rowLabel" destination="1Ti-oE-9QP" id="lRA-Cn-TfP"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="exerciseTable" destination="oq6-OC-3Gy" id="96i-HK-dLQ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="146" y="653"/>
         </scene>
     </scenes>
 </document>

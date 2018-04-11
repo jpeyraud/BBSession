@@ -24,4 +24,8 @@ class SessionManager {
         sessionList.forEach { names.append($0.name) }
         return names
     }
+    
+    func getSession(atIndex index: Int) -> Session {
+        return sessionList[index]
+    }
 }

@@ -12,6 +12,8 @@ import Foundation
 
 class CreateExerciseInterfaceController: WKInterfaceController {
     
+    static let storyboardId = "CreateExerciseInterfaceController"
+    
     @IBOutlet var seriesPicker: WKInterfacePicker!
     @IBOutlet var repetitionsPicker: WKInterfacePicker!
     
@@ -36,7 +38,7 @@ class CreateExerciseInterfaceController: WKInterfaceController {
     }
     
     @IBAction func addExerciseToSession() {
-        presentTextInputController(withSuggestions: ["Pec","Abdo","Shoulders","Back"], allowedInputMode: WKTextInputMode.plain) { result in
+        presentTextInputController(withSuggestions: ["Dev Couché","Dev Incliné","Rowing","Tirage Vertical"], allowedInputMode: WKTextInputMode.plain) { result in
             if let exerciseName = result?.first as? String {
                 self.createSessionInterfaceController?.exercises.append(Exercise(name: exerciseName, repetitions: self.repetitionsVal, series: self.seriesVal))
                 self.dismiss()

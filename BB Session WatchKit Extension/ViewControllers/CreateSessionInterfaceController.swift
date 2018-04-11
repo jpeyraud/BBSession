@@ -11,7 +11,9 @@ import Foundation
 
 class CreateSessionInterfaceController: WKInterfaceController {
     
-    @IBOutlet var exerciseList: WKInterfaceTable!
+    static let storyboardId = "CreateSessionInterfaceController"
+    
+    @IBOutlet var exerciseTable: WKInterfaceTable!
     
     var exercises = [Exercise]()
     
@@ -19,19 +21,19 @@ class CreateSessionInterfaceController: WKInterfaceController {
         
         var names = [String]()
         exercises.forEach{ names.append($0.name) }
-        exerciseList.setNumberOfRows(names.count, withRowType: LabelTableRowController.storyboardId)
+        exerciseTable.setNumberOfRows(names.count, withRowType: LabelTableRowController.storyboardId)
         
-        let rowCount = self.exerciseList.numberOfRows
+        let rowCount = self.exerciseTable.numberOfRows
         
         for i in 0..<rowCount {
-            if let row = exerciseList.rowController(at: i) as? LabelTableRowController {
+            if let row = exerciseTable.rowController(at: i) as? LabelTableRowController {
                 row.rowLabel.setText(names[i])
             }
         }
     }
     
     @IBAction func addSessionToManager() {
-        presentTextInputController(withSuggestions: ["Pec","Abdo","Shoulders","Back"], allowedInputMode: WKTextInputMode.plain) { result in
+        presentTextInputController(withSuggestions: ["Pec","Biceps","Triceps","Shoulders","Back", "Abdos"], allowedInputMode: WKTextInputMode.plain) { result in
             if let sessionName = result?.first as? String {
                 let session = Session(sessionName)
                 session.exerciseList = self.exercises

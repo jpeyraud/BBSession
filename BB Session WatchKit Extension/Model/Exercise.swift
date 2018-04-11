@@ -13,23 +13,12 @@ class Exercise {
     let name: String
     let repetitions: Int
     let series: Int
-    
-    var currentSeries: Int
-    var currentWeight: Int
-    var isDone: Bool
+    var weight: Int
     
     init(name: String, repetitions: Int, series: Int) {
         self.name = name
         self.repetitions = repetitions
         self.series = series
-        currentSeries = 0
-        currentWeight = 0
-        isDone = false
-    }
-    
-    func didFinishSeriesShouldContinue() -> Bool {
-        currentSeries+=1
-        isDone = currentSeries < series
-        return isDone
+        self.weight = 0
     }
 }
