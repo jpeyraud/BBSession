@@ -17,27 +17,42 @@ class CreateSessionInterfaceController: WKInterfaceController {
     
     var exercises = [Exercise]()
     
+    private var deleteMode = false
+    
     override func willActivate() {
-        
+        refreshTable()
+    }
+    
+    private func refreshTable() {
+        let rowType = deleteMode ? DeleteLabelTableRowController.storyboardId : LabelTableRowController.storyboardId
         var names = [String]()
         exercises.forEach{ names.append($0.name) }
-        exerciseTable.setNumberOfRows(names.count, withRowType: LabelTableRowController.storyboardId)
+        exerciseTable.setNumberOfRows(names.count, withRowType: rowType)
         
         let rowCount = self.exerciseTable.numberOfRows
         
         for i in 0..<rowCount {
             if let row = exerciseTable.rowController(at: i) as? LabelTableRowController {
                 row.rowLabel.setText(names[i])
+            } else if let row = exerciseTable.rowController(at: i) as? DeleteLabelTableRowController {
+                row.rowLabel.setText(names[i])
             }
         }
     }
     
+    @IBAction func changeEditMode() {
+        deleteMode = !deleteMode
+        
+        refreshTable()
+    }
+    
     @IBAction func addSessionToManager() {
-        presentTextInputController(withSuggestions: ["Pec","Biceps","Triceps","Shoulders","Back", "Abdos"], allowedInputMode: WKTextInputMode.plain) { result in
+        presentTextInputController(withSuggestions: ["Pec", "Shoulders", "Biceps", "Triceps", "Back", "Abdos"], allowedInputMode: WKTextInputMode.plain) { result in
             if let sessionName = result?.first as? String {
                 let session = Session(sessionName)
                 session.exerciseList = self.exercises
                 SessionManager.shared.addSession(session)
+                SessionManager.shared.saveSessions()
                 self.dismiss()
             }
         }

@@ -38,7 +38,7 @@ class CreateExerciseInterfaceController: WKInterfaceController {
     }
     
     @IBAction func addExerciseToSession() {
-        presentTextInputController(withSuggestions: ["Dev Couché","Dev Incliné","Rowing","Tirage Vertical"], allowedInputMode: WKTextInputMode.plain) { result in
+        presentTextInputController(withSuggestions: ["Dev Couché", "Tirage Pec", "Dev Incliné H", "Rowing", "Ecarté Haltères", "Oiseau", "Dev Epaule H", "Elev Latérale H","Tirage Epaule Barre", "Dips", "Biceps Barre", "Extens Corde", "Biceps Marteau"], allowedInputMode: WKTextInputMode.plain) { result in
             if let exerciseName = result?.first as? String {
                 self.createSessionInterfaceController?.exercises.append(Exercise(name: exerciseName, repetitions: self.repetitionsVal, series: self.seriesVal))
                 self.dismiss()

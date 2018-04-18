@@ -19,11 +19,27 @@
                                 <tableRow identifier="LabelTableRowController" id="YcC-nC-Xtf" customClass="LabelTableRowController" customModule="BB_Session_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="mgT-LA-0sw">
                                         <items>
-                                            <label width="136" height="64" alignment="center" text="Label" textAlignment="center" id="UFQ-fA-ftz"/>
+                                            <label width="1" height="1" alignment="center" text="Label" textAlignment="center" id="UFQ-fA-ftz"/>
                                         </items>
                                     </group>
                                     <connections>
                                         <outlet property="rowLabel" destination="UFQ-fA-ftz" id="caL-6a-g7a"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="DeleteLabelTableRowController" id="n4i-Ae-DfO" userLabel="DeleteLabelTableRowController" customClass="DeleteLabelTableRowController" customModule="BB_Session_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="jbm-ef-gFt">
+                                        <items>
+                                            <label height="1" alignment="left" text="Label" textAlignment="center" id="3S3-jt-yRb"/>
+                                            <button width="33" height="33" alignment="right" verticalAlignment="center" title="-" id="Tlr-eP-4pN" userLabel="Delete">
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="deleteRow" destination="n4i-Ae-DfO" id="tmr-yW-ECz"/>
+                                                </connections>
+                                            </button>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="rowLabel" destination="3S3-jt-yRb" id="AlO-OE-hkW"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -35,18 +51,37 @@
                         </button>
                         <table alignment="left" id="0Ki-wb-GYr"/>
                     </items>
+                    <menu key="menu" id="iue-2r-lVJ">
+                        <items>
+                            <menuItem title="Delete" icon="trash" id="3XJ-sb-L27" userLabel="DeleteMode">
+                                <connections>
+                                    <action selector="changeEditMode" destination="AgC-eL-Hgc" id="2rb-WZ-eog"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="sessionTable" destination="ucs-Va-NNF" id="HoA-nm-AE4"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="146" y="340"/>
+            <point key="canvasLocation" x="145.58974358974359" y="339.5641025641026"/>
         </scene>
         <!--ExerciseDescriptionInterfaceController-->
         <scene sceneID="Uaa-0l-dgg">
             <objects>
                 <controller identifier="ExerciseDescriptionInterfaceController" id="ulq-1B-7qX" customClass="ExerciseDescriptionInterfaceController" customModule="BB_Session_WatchKit_Extension">
                     <items>
+                        <group width="1" height="55" alignment="left" id="bo7-ye-bCB">
+                            <items>
+                                <label height="1" alignment="center" text="Weight:" id="Sf2-AF-Ktq"/>
+                                <picker width="60" height="55" alignment="center" focusStyle="sequence" id="jly-iC-09Q">
+                                    <connections>
+                                        <action selector="weightPickerDidUpdate:" destination="ulq-1B-7qX" id="zNS-ZC-Pgd"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
                         <group width="1" height="40" alignment="left" id="fVb-Dy-VMc">
                             <items>
                                 <label height="1" alignment="left" text="Series:" id="m2j-uN-PLB"/>
@@ -57,16 +92,6 @@
                             <items>
                                 <label height="1" alignment="left" text="Repetitions:" id="9bt-g0-qXh"/>
                                 <label alignment="right" verticalAlignment="center" text="0" id="mc4-3H-5La"/>
-                            </items>
-                        </group>
-                        <group width="1" height="55" alignment="left" id="bo7-ye-bCB">
-                            <items>
-                                <label height="1" alignment="left" text="Weight:" id="Sf2-AF-Ktq"/>
-                                <picker width="60" height="55" alignment="right" id="jly-iC-09Q">
-                                    <connections>
-                                        <action selector="weightPickerDidUpdate:" destination="ulq-1B-7qX" id="zNS-ZC-Pgd"/>
-                                    </connections>
-                                </picker>
                             </items>
                         </group>
                     </items>
@@ -89,11 +114,27 @@
                                 <tableRow identifier="LabelTableRowController" id="oVf-ld-0fx" customClass="LabelTableRowController" customModule="BB_Session_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="fIe-z0-NQg">
                                         <items>
-                                            <label width="136" height="64" alignment="center" text="Label" textAlignment="center" id="DOz-Je-wyq"/>
+                                            <label width="1" height="1" alignment="center" text="Label" textAlignment="center" id="DOz-Je-wyq"/>
                                         </items>
                                     </group>
                                     <connections>
                                         <outlet property="rowLabel" destination="DOz-Je-wyq" id="Tym-xL-5nE"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="DeleteLabelTableRowController" id="Es0-k1-hxh" userLabel="DeleteLabelTableRowController" customClass="DeleteLabelTableRowController" customModule="BB_Session_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="y0j-QB-lgX">
+                                        <items>
+                                            <label height="1" alignment="left" text="Label" textAlignment="center" id="WmH-JV-15E"/>
+                                            <button width="33" height="33" alignment="right" verticalAlignment="center" title="-" id="dei-BP-nUr" userLabel="Delete">
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="deleteRow" destination="Es0-k1-hxh" id="Y4V-Zu-1YQ"/>
+                                                </connections>
+                                            </button>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="rowLabel" destination="WmH-JV-15E" id="CY4-JP-fUf"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -109,6 +150,15 @@
                             </connections>
                         </button>
                     </items>
+                    <menu key="menu" id="xNt-sb-W7U">
+                        <items>
+                            <menuItem title="Delete" icon="trash" id="Kxo-zb-sea" userLabel="DeleteMode">
+                                <connections>
+                                    <action selector="changeEditMode" destination="9aU-K2-ApI" id="8ae-ak-wAS"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="exerciseTable" destination="u4s-UD-fpE" id="lxv-Z3-ovB"/>
                     </connections>
@@ -165,7 +215,7 @@
                                 <tableRow identifier="LabelTableRowController" id="Tpk-9D-txF" customClass="LabelTableRowController" customModule="BB_Session_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="L8H-xb-pPI">
                                         <items>
-                                            <label width="136" height="64" alignment="center" text="Label" textAlignment="center" id="1Ti-oE-9QP"/>
+                                            <label width="1" height="1" alignment="center" text="Label" textAlignment="center" id="1Ti-oE-9QP"/>
                                         </items>
                                     </group>
                                     <connections>

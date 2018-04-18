@@ -44,5 +44,6 @@ class ExerciseDescriptionInterfaceController: WKInterfaceController {
     
     @IBAction func weightPickerDidUpdate(_ value: Int) {
         selectedExercise?.weight = value
+        SessionManager.shared.saveSessions()
     }
 }

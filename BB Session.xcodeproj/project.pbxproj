@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		F81A4A3E207DDD8F00761016 /* ExerciseDescriptionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81A4A3D207DDD8F00761016 /* ExerciseDescriptionInterfaceController.swift */; };
 		F81A4A40207DE43B00761016 /* SessionDescriptionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81A4A3F207DE43B00761016 /* SessionDescriptionInterfaceController.swift */; };
+		F870C51C207F3B47004F2BE2 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F870C51A207F3B46004F2BE2 /* Fabric.framework */; };
+		F870C51D207F3B47004F2BE2 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F870C51B207F3B47004F2BE2 /* Crashlytics.framework */; };
+		F891A7D520871FB600980987 /* DeleteLabelTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F891A7D420871FB600980987 /* DeleteLabelTableRowController.swift */; };
 		F8CB6372207BCB040050037B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB6371207BCB040050037B /* AppDelegate.swift */; };
 		F8CB6374207BCB040050037B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CB6373207BCB040050037B /* ViewController.swift */; };
 		F8CB6377207BCB040050037B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8CB6375207BCB040050037B /* Main.storyboard */; };
@@ -75,6 +78,9 @@
 /* Begin PBXFileReference section */
 		F81A4A3D207DDD8F00761016 /* ExerciseDescriptionInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDescriptionInterfaceController.swift; sourceTree = "<group>"; };
 		F81A4A3F207DE43B00761016 /* SessionDescriptionInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDescriptionInterfaceController.swift; sourceTree = "<group>"; };
+		F870C51A207F3B46004F2BE2 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		F870C51B207F3B47004F2BE2 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
+		F891A7D420871FB600980987 /* DeleteLabelTableRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLabelTableRowController.swift; sourceTree = "<group>"; };
 		F8CB636E207BCB040050037B /* BB Session.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BB Session.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8CB6371207BCB040050037B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8CB6373207BCB040050037B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F870C51D207F3B47004F2BE2 /* Crashlytics.framework in Frameworks */,
+				F870C51C207F3B47004F2BE2 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +150,8 @@
 		F8CB6370207BCB040050037B /* BB Session */ = {
 			isa = PBXGroup;
 			children = (
+				F870C51B207F3B47004F2BE2 /* Crashlytics.framework */,
+				F870C51A207F3B46004F2BE2 /* Fabric.framework */,
 				F8CB6371207BCB040050037B /* AppDelegate.swift */,
 				F8CB6373207BCB040050037B /* ViewController.swift */,
 				F8CB6375207BCB040050037B /* Main.storyboard */,
@@ -203,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				F8CB63BA207C98000050037B /* LabelTableRowController.swift */,
+				F891A7D420871FB600980987 /* DeleteLabelTableRowController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -218,6 +229,7 @@
 				F8CB636B207BCB040050037B /* Frameworks */,
 				F8CB636C207BCB040050037B /* Resources */,
 				F8CB63A7207BCB070050037B /* Embed Watch Content */,
+				F870C504207F3987004F2BE2 /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -334,6 +346,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F870C504207F3987004F2BE2 /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Fabric;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run d573f37931ae00caf546c4502bd3fe9478f67621 bcb479fbbe236e1a9c4f141b7124863eca052f840a9ec879bbcc6686a54c47e6";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F8CB636A207BCB040050037B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -349,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8CB6399207BCB060050037B /* NotificationController.swift in Sources */,
+				F891A7D520871FB600980987 /* DeleteLabelTableRowController.swift in Sources */,
 				F8CB63B8207C8E810050037B /* CreateExerciseInterfaceController.swift in Sources */,
 				F8CB63AC207BCE580050037B /* Exercise.swift in Sources */,
 				F8CB63BB207C98000050037B /* LabelTableRowController.swift in Sources */,
@@ -607,6 +637,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TPC9UY9U6L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "BB Session/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -626,6 +660,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TPC9UY9U6L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "BB Session/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

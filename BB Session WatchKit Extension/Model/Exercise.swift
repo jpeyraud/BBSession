@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Exercise {
+class Exercise: Codable {
     
     let name: String
     let repetitions: Int
