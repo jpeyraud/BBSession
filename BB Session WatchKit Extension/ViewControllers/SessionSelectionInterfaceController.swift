@@ -25,7 +25,7 @@ class SessionSelectionInterfaceController: WKInterfaceController {
         super.willActivate()
         
         SessionManager.shared.loadSessions()
-        
+                
         refreshTable()
     }
     
@@ -35,8 +35,6 @@ class SessionSelectionInterfaceController: WKInterfaceController {
     
     @IBAction func changeEditMode() {
         deleteMode = !deleteMode
-        
-        refreshTable()
     }
     
     private func refreshTable() {
@@ -49,6 +47,10 @@ class SessionSelectionInterfaceController: WKInterfaceController {
                 row.rowLabel.setText(sessionList[i])
             } else if let row = sessionTable.rowController(at: i) as? DeleteLabelTableRowController {
                 row.rowLabel.setText(sessionList[i])
+                row.deleteCompletion = {
+                    SessionManager.shared.removeSession(atIndex: i)
+                    self.refreshTable()
+                }
             }
         }
     }

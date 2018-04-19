@@ -36,14 +36,16 @@ class CreateSessionInterfaceController: WKInterfaceController {
                 row.rowLabel.setText(names[i])
             } else if let row = exerciseTable.rowController(at: i) as? DeleteLabelTableRowController {
                 row.rowLabel.setText(names[i])
+                row.deleteCompletion = {
+                    self.exercises.remove(at: i)
+                    self.refreshTable()
+                }
             }
         }
     }
     
     @IBAction func changeEditMode() {
         deleteMode = !deleteMode
-        
-        refreshTable()
     }
     
     @IBAction func addSessionToManager() {
@@ -52,7 +54,6 @@ class CreateSessionInterfaceController: WKInterfaceController {
                 let session = Session(sessionName)
                 session.exerciseList = self.exercises
                 SessionManager.shared.addSession(session)
-                SessionManager.shared.saveSessions()
                 self.dismiss()
             }
         }

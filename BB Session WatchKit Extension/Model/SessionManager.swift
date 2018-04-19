@@ -21,6 +21,7 @@ class SessionManager {
 
     func addSession(_ session: Session) {
         sessionList.append(session)
+        saveSessions()
     }
     
     func getSessionNameList() -> [String] {
@@ -31,6 +32,16 @@ class SessionManager {
     
     func getSession(atIndex index: Int) -> Session {
         return sessionList[index]
+    }
+    
+    func removeSession(atIndex index: Int) {
+        sessionList.remove(at: index)
+        saveSessions()
+    }
+    
+    func removeExercise(atIndex exIndex: Int, fromSessionAtIndex sessIndex: Int) {
+        sessionList[sessIndex].exerciseList.remove(at: exIndex)
+        saveSessions()
     }
     
     func saveSessions() {
@@ -51,5 +62,15 @@ class SessionManager {
             }
         }
         print("Error loading sessions")
+    }
+    
+    func getDateFormat(_ time: Float?) -> String {
+        guard let time = time else {
+            return ""
+        }
+        let min = Int(time) / 60
+        let sec = Int(time) % 60
+        
+        return "\(min):\(sec)"
     }
 }

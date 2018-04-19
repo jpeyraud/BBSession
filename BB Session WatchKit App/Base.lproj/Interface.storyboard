@@ -82,22 +82,28 @@
                                 </picker>
                             </items>
                         </group>
-                        <group width="1" height="40" alignment="left" id="fVb-Dy-VMc">
+                        <group width="1" height="28" alignment="left" id="fVb-Dy-VMc">
                             <items>
                                 <label height="1" alignment="left" text="Series:" id="m2j-uN-PLB"/>
                                 <label alignment="right" verticalAlignment="center" text="0" id="bbh-H3-2jq"/>
                             </items>
                         </group>
-                        <group width="1" height="40" alignment="left" id="T2J-dh-X0y">
+                        <group width="1" height="28" alignment="left" id="T2J-dh-X0y">
                             <items>
                                 <label height="1" alignment="left" text="Repetitions:" id="9bt-g0-qXh"/>
                                 <label alignment="right" verticalAlignment="center" text="0" id="mc4-3H-5La"/>
                             </items>
                         </group>
+                        <button width="1" alignment="left" title="Start Rest" id="lM1-Iy-kSq">
+                            <connections>
+                                <action selector="startRest" destination="ulq-1B-7qX" id="MwS-qg-nKF"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="repetitionsLabel" destination="mc4-3H-5La" id="Hif-Da-ntG"/>
                         <outlet property="seriesLabel" destination="bbh-H3-2jq" id="7Ax-M3-h6h"/>
+                        <outlet property="startRestButton" destination="lM1-Iy-kSq" id="pQk-Cj-8B9"/>
                         <outlet property="weightPicker" destination="jly-iC-09Q" id="BZO-95-FeN"/>
                     </connections>
                 </controller>
@@ -173,8 +179,10 @@
                     <items>
                         <group width="1" alignment="left" id="ytC-uE-bV2">
                             <items>
-                                <label alignment="left" text="Series" id="3cm-SP-Vb0"/>
-                                <picker width="60" height="55" alignment="right" focusStyle="stack" id="bd2-Ny-DFl">
+                                <label alignment="left" verticalAlignment="center" text="Series" id="3cm-SP-Vb0"/>
+                                <picker width="60" height="45" alignment="right" focusStyle="stack" id="bd2-Ny-DFl">
+                                    <variation key="device=watch38mm" width="47"/>
+                                    <variation key="device=watch42mm" width="55"/>
                                     <connections>
                                         <action selector="seriesPickerUpdated:" destination="ruR-zV-yDF" id="I44-zQ-n0I"/>
                                     </connections>
@@ -183,10 +191,24 @@
                         </group>
                         <group width="1" alignment="left" id="Jqh-p2-K2q">
                             <items>
-                                <label alignment="left" text="Repetitions" id="Mea-c8-Kr4"/>
-                                <picker width="60" height="55" alignment="right" focusStyle="stack" id="7CI-W9-K2d">
+                                <label alignment="left" verticalAlignment="center" text="Repetitions" id="Mea-c8-Kr4"/>
+                                <picker width="60" height="45" alignment="right" focusStyle="stack" id="7CI-W9-K2d">
+                                    <variation key="device=watch38mm" width="47"/>
+                                    <variation key="device=watch42mm" width="55"/>
                                     <connections>
                                         <action selector="repetitionsPickerUpdated:" destination="ruR-zV-yDF" id="zeL-Ur-x4k"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="gaJ-bL-7B4">
+                            <items>
+                                <label alignment="left" verticalAlignment="center" text="Resting Time" id="6rG-a3-1zO"/>
+                                <picker width="60" height="45" alignment="right" focusStyle="stack" id="8S8-Vn-WUn">
+                                    <variation key="device=watch38mm" width="47"/>
+                                    <variation key="device=watch42mm" width="55"/>
+                                    <connections>
+                                        <action selector="restingTimePickerUpdated:" destination="ruR-zV-yDF" id="p7A-ih-DXZ"/>
                                     </connections>
                                 </picker>
                             </items>
@@ -199,6 +221,7 @@
                     </items>
                     <connections>
                         <outlet property="repetitionsPicker" destination="7CI-W9-K2d" id="vG9-ua-1Sl"/>
+                        <outlet property="restingTimePicker" destination="8S8-Vn-WUn" id="5ws-ZI-gMp"/>
                         <outlet property="seriesPicker" destination="bd2-Ny-DFl" id="Wfh-oW-KnJ"/>
                     </connections>
                 </controller>

@@ -9,14 +9,18 @@
 import WatchKit
 import Foundation
 
+typealias DeleteCompletion = () -> ()
 
 class DeleteLabelTableRowController: NSObject {
     
     static let storyboardId = "DeleteLabelTableRowController"
+
+    var deleteCompletion: DeleteCompletion?
     
     @IBOutlet var rowLabel: WKInterfaceLabel!
     
     @IBAction func deleteRow() {
+        deleteCompletion?()
     }
     
 }
