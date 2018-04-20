@@ -29,6 +29,8 @@ class SessionDescriptionInterfaceController: WKInterfaceController {
     
     override func willActivate() {
         refreshExercisesList()
+        
+        SessionManager.shared.saveSessions()
     }
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
@@ -45,5 +47,10 @@ class SessionDescriptionInterfaceController: WKInterfaceController {
             row.rowLabel.setText(exerciseList[i].name)
             row.rowLabel.setTextColor(exerciseList[i].isFinished ? UIColor.green : UIColor.white)
         }
+    }
+    
+    @IBAction func resetSessions() {
+        exerciseList.forEach{ $0.stop() }
+        pop()
     }
 }

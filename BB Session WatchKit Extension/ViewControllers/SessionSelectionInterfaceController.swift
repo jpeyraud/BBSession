@@ -15,7 +15,11 @@ class SessionSelectionInterfaceController: WKInterfaceController {
 
     @IBOutlet var sessionTable: WKInterfaceTable!
     
-    private var deleteMode = false
+    private var deleteMode: Bool = false {
+        didSet {
+            self.refreshTable()
+        }
+    }
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -25,12 +29,8 @@ class SessionSelectionInterfaceController: WKInterfaceController {
         super.willActivate()
         
         SessionManager.shared.loadSessions()
-                
-        refreshTable()
-    }
-    
-    override func didDeactivate() {
-        super.didDeactivate()
+        
+        self.refreshTable()
     }
     
     @IBAction func changeEditMode() {
@@ -50,6 +50,10 @@ class SessionSelectionInterfaceController: WKInterfaceController {
                 row.deleteCompletion = {
                     SessionManager.shared.removeSession(atIndex: i)
                     self.refreshTable()
+                    
+                    if SessionManager.shared.getSessionCount() == 0 {
+                        self.deleteMode = false
+                    }
                 }
             }
         }

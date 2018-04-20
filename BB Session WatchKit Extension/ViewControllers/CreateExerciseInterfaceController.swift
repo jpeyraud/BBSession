@@ -20,9 +20,9 @@ class CreateExerciseInterfaceController: WKInterfaceController {
     @IBOutlet var repetitionsPicker: WKInterfacePicker!
     @IBOutlet var restingTimePicker: WKInterfacePicker!
     
-    private var seriesVal = 0
-    private var repetitionsVal = 0
-    private var restTime = 0
+    private var seriesVal = 1
+    private var repetitionsVal = 1
+    private var restTime = 15
     
     private var createSessionInterfaceController: CreateSessionInterfaceController?
     
@@ -59,15 +59,15 @@ class CreateExerciseInterfaceController: WKInterfaceController {
     }
     
     @IBAction func seriesPickerUpdated(_ value: Int) {
-        seriesVal = value
+        seriesVal = value + 1
     }
     
     @IBAction func repetitionsPickerUpdated(_ value: Int) {
-        repetitionsVal = value
+        repetitionsVal = value + 1
     }
     
     @IBAction func restingTimePickerUpdated(_ value: Int) {
-        restTime = value * CreateExerciseInterfaceController.restTimeFactor
+        restTime = (value + 1) * CreateExerciseInterfaceController.restTimeFactor
     }
     
 }

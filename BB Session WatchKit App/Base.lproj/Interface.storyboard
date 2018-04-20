@@ -248,6 +248,15 @@
                             </items>
                         </table>
                     </items>
+                    <menu key="menu" id="eNh-Bq-ZLT">
+                        <items>
+                            <menuItem title="Stop" icon="decline" id="TQp-uB-NWY">
+                                <connections>
+                                    <action selector="resetSessions" destination="qv7-33-8f4" id="mNQ-Ma-IhG"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="exerciseTable" destination="oq6-OC-3Gy" id="96i-HK-dLQ"/>
                     </connections>

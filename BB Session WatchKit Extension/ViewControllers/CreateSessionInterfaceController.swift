@@ -17,7 +17,11 @@ class CreateSessionInterfaceController: WKInterfaceController {
     
     var exercises = [Exercise]()
     
-    private var deleteMode = false
+    private var deleteMode = false {
+        didSet {
+            self.refreshTable()
+        }
+    }
     
     override func willActivate() {
         refreshTable()

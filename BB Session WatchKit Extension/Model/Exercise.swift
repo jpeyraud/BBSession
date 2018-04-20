@@ -51,4 +51,10 @@ class Exercise: Codable {
         
         return !isFinished
     }
+    
+    func stop() {
+        remainingSeries = 0
+        remainingRestTime = 0
+        isFinished = false
+    }
 }

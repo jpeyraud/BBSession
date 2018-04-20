@@ -24,6 +24,10 @@ class SessionManager {
         saveSessions()
     }
     
+    func getSessionCount() -> Int {
+        return sessionList.count
+    }
+    
     func getSessionNameList() -> [String] {
         var names = [String]()
         sessionList.forEach { names.append($0.name) }
